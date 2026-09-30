@@ -1,0 +1,565 @@
+# simbu-beauties
+official website for Simbu Natural Beauties
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Simbu Natural Showcasing</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7f3;
+            color: #222;
+        }
+
+        /* NAVIGATION */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 50, 25, 0.95);
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        nav h2 {
+            color: white;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #9cff9c;
+        }
+
+        /* HERO */
+        .hero {
+            height: 100vh;
+            background:
+                linear-gradient(rgba(0,0,0,0.35), rgba(0,40,20,0.55)),
+                url("images/simbu-mountains.jpg");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero h1 {
+            font-size: 65px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 22px;
+            line-height: 1.6;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 30px;
+            background: #198754;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background: #116c42;
+        }
+
+        /* GENERAL SECTION */
+        section {
+            padding: 80px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            color: #07552d;
+        }
+
+        .section-title p {
+            margin-top: 10px;
+            color: #555;
+        }
+
+        /* INTRO */
+        .intro {
+            background: white;
+            text-align: center;
+        }
+
+        .intro p {
+            max-width: 850px;
+            margin: auto;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        /* BEAUTY CARDS */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 25px;
+        }
+
+        .card-content h3 {
+            color: #07552d;
+            margin-bottom: 10px;
+        }
+
+        .card-content p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* GALLERY */
+        .gallery {
+            background: #e8f1e9;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .gallery-grid img:hover {
+            transform: scale(1.03);
+        }
+
+        /* PLACES */
+        .places {
+            background: white;
+        }
+
+        .place-list {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .place {
+            padding: 25px;
+            margin-bottom: 15px;
+            border-left: 5px solid #198754;
+            background: #f2f7f3;
+            border-radius: 8px;
+        }
+
+        .place h3 {
+            color: #07552d;
+            margin-bottom: 8px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #00351d;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        footer h2 {
+            margin-bottom: 10px;
+        }
+
+        footer p {
+            color: #c9ded0;
+        }
+
+        /* MOBILE */
+        @media (max-width: 800px) {
+
+            nav {
+                padding: 15px 5%;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <h2>Simbu Natural</h2>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#beauty">Natural Beauty</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#places">Explore</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <h1>Simbu Natural Showcasing</h1>
+
+            <p>
+                Discover the breathtaking natural beauty of
+                Simbu Province, Papua New Guinea.
+            </p>
+
+            <a href="#beauty" class="btn">
+                Explore Simbu
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- INTRODUCTION -->
+    <section class="intro">
+
+        <div class="section-title">
+            <h2>Welcome to Simbu</h2>
+        </div>
+
+        <p>
+            Simbu Natural Showcasing is a digital platform created to
+            introduce people to the beautiful landscapes and natural
+            environments of Simbu Province. Explore mountains,
+            waterfalls, rivers, forests, valleys and the unique
+            communities surrounded by nature.
+        </p>
+
+    </section>
+
+
+    <!-- NATURAL BEAUTY -->
+    <section id="beauty">
+
+        <div class="section-title">
+
+            <h2>Discover the Natural Beauty</h2>
+
+            <p>
+                Click and explore some of the natural treasures of Simbu.
+            </p>
+
+        </div>
+
+
+        <div class="cards">
+
+            <div class="card">
+
+                <img src="images/mountains.jpg">
+
+                <div class="card-content">
+
+                    <h3>Majestic Mountains</h3>
+
+                    <p>
+                        Explore the spectacular mountains and highlands
+                        landscapes of Simbu.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <img src="images/waterfalls.jpg">
+
+                <div class="card-content">
+
+                    <h3>Waterfalls</h3>
+
+                    <p>
+                        Discover beautiful waterfalls and freshwater
+                        streams flowing through the province.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <img src="images/forests.jpg">
+
+                <div class="card-content">
+
+                    <h3>Forests & Nature</h3>
+
+                    <p>
+                        Experience the green forests, plants and natural
+                        environment of Simbu.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <img src="images/rivers.jpg">
+
+                <div class="card-content">
+
+                    <h3>Rivers & Valleys</h3>
+
+                    <p>
+                        See the rivers and beautiful valleys that shape
+                        the landscape of Simbu.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <img src="images/villages.jpg">
+
+                <div class="card-content">
+
+                    <h3>Villages</h3>
+
+                    <p>
+                        Discover communities and villages surrounded by
+                        Simbu's natural environment.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <img src="images/culture.jpg">
+
+                <div class="card-content">
+
+                    <h3>Culture & Nature</h3>
+
+                    <p>
+                        Experience the connection between people,
+                        culture and the natural environment.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PHOTO GALLERY -->
+    <section class="gallery" id="gallery">
+
+        <div class="section-title">
+
+            <h2>Simbu Photo Gallery</h2>
+
+            <p>
+                A visual collection of Simbu's natural beauty.
+            </p>
+
+        </div>
+
+
+        <div class="gallery-grid">
+
+            <img src="images/photo1.jpg">
+            <img src="images/photo2.jpg">
+            <img src="images/photo3.jpg">
+            <img src="images/photo4.jpg">
+            <img src="images/photo5.jpg">
+            <img src="images/photo6.jpg">
+
+        </div>
+
+    </section>
+
+
+    <!-- EXPLORE -->
+    <section class="places" id="places">
+
+        <div class="section-title">
+
+            <h2>Explore Simbu</h2>
+
+            <p>
+                Discover places, landscapes and experiences.
+            </p>
+
+        </div>
+
+
+        <div class="place-list">
+
+            <div class="place">
+
+                <h3>Mountain Landscapes</h3>
+
+                <p>
+                    Discover the spectacular highland scenery of Simbu.
+                </p>
+
+            </div>
+
+
+            <div class="place">
+
+                <h3>Waterfalls & Rivers</h3>
+
+                <p>
+                    Explore natural waterways and waterfalls found
+                    throughout the province.
+                </p>
+
+            </div>
+
+
+            <div class="place">
+
+                <h3>Forests & Wildlife</h3>
+
+                <p>
+                    Learn about the natural environment, plants and
+                    wildlife of Simbu.
+                </p>
+
+            </div>
+
+
+            <div class="place">
+
+                <h3>Local Communities</h3>
+
+                <p>
+                    Learn about communities living among Simbu's
+                    beautiful natural landscapes.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <h2>Simbu Natural Showcasing</h2>
+
+        <p>
+            Showcasing the natural beauty of Simbu Province,
+            Papua New Guinea.
+        </p>
+
+        <br>
+
+        <p>
+            © 2026 Simbu Natural Showcasing
+        </p>
+
+    </footer>
+
+</body>
+</html>
